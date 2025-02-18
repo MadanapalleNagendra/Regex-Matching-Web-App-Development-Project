@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validator</title>
+</head>
+<body>
+    <h1>Email Validator</h1>
+    <form action="/validate-email" method="POST">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <button type="submit">Validate</button>
+    </form>
+    {% if email %}
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Validation Result:</strong> {{ "Valid" if is_valid else "Invalid" }}</p>
+    {% endif %}
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
